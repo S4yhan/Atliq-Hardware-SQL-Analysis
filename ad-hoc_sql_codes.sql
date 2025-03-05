@@ -13,13 +13,13 @@ WHERE
 -- unique_products_2021
 -- percentage_chg
 
-SELECT   
+SELECT
 	table_2020.unique_product_2020 AS unique_products_2020,
-    table_2021.unique_product_2021 AS unique_products_2021,
-    ((table_2021.unique_product_2021-table_2020.unique_product_2020)/table_2020.unique_product_2020)*100 AS percentage_chg
+	table_2021.unique_product_2021 AS unique_products_2021,
+	((table_2021.unique_product_2021-table_2020.unique_product_2020)/table_2020.unique_product_2020)*100 AS percentage_chg
 FROM
-		( SELECT COUNT(DISTINCT product_code) AS unique_product_2020 FROM fact_gross_price WHERE fiscal_year = 2020 ) AS table_2020,
-		( SELECT COUNT(DISTINCT product_code) AS unique_product_2021 FROM fact_gross_price WHERE fiscal_year = 2021 ) AS table_2021 ;
+	(SELECT COUNT(DISTINCT product_code) AS unique_product_2020 FROM fact_gross_price WHERE fiscal_year = 2020) AS table_2020,
+	(SELECT COUNT(DISTINCT product_code) AS unique_product_2021 FROM fact_gross_price WHERE fiscal_year = 2021) AS table_2021;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 3. Provide a report with all the unique product counts for each segment and sort them in descending order of product counts. The final output
