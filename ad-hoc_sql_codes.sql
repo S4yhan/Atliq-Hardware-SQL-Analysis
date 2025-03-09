@@ -88,12 +88,14 @@ LIMIT 5;
 -- Year
 -- Gross sales Amount
 SELECT
-	fs.fiscal_year AS Fiscal_Year,
-	MONTH(fs.date) AS Month,
-	ROUND(SUM(fs.sold_quantity * fp.gross_price), 2) AS Gross_sales_amount
+    fs.fiscal_year AS Fiscal_Year,  
+    MONTHNAME(fs.date) AS Month,
+    ROUND(SUM(fs.sold_quantity * fp.gross_price), 2) AS Gross_sales_amount
 FROM fact_sales_monthly fs
-JOIN dim_customer dc ON fs.customer_code = dc.customer_code
-JOIN fact_gross_price fp ON fs.product_code = fp.product_code
+JOIN dim_customer dc 
+    ON fs.customer_code = dc.customer_code
+JOIN fact_gross_price fp 
+    ON fs.product_code = fp.product_code 
 WHERE dc.customer = 'Atliq Exclusive'
 GROUP BY Month, Fiscal_year
 ORDER BY Fiscal_year;
