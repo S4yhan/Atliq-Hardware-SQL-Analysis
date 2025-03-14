@@ -79,3 +79,4 @@ This data analysis project has yielded key insights into Atliq Hardware's busine
 *   **Address PC Division Sales Volume:** Analyze the reasons for the PC division's comparatively lower sales volume and develop strategies to boost sales performance in this segment.
 
 These insights provide a data-driven foundation for Atliq Hardwares' management to make informed strategic decisions related to market focus, product portfolio optimization, sales strategies, and customer relationship management.
+Video Presentation: https://www.youtube.com/watch?v=j8cE74z-VXQ
